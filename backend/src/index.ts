@@ -5,6 +5,7 @@ import dotenv from "dotenv";
 import userRoutes from "./routes/user.routes";
 import taskRoutes from "./routes/task.routes";
 import { pool, testConnection } from "./utils/db";
+import { setupSwagger } from "./docs/swagger";
 
 // Load environment variables
 dotenv.config();
@@ -18,6 +19,9 @@ app.use(cors());
 app.use(helmet());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// Setup Swagger
+setupSwagger(app);
 
 // Routes
 app.use("/api/users", userRoutes);
@@ -49,6 +53,9 @@ app.get("/api/db-test", async (req: Request, res: Response) => {
 // Start the server
 app.listen(PORT, async () => {
   console.log(`Server running on port ${PORT}`);
+  console.log(
+    `API Documentation available at http://localhost:${PORT}/api-docs`
+  );
 
   // Test database connection on startup
   await testConnection();
