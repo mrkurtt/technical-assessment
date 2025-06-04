@@ -1,0 +1,9 @@
+services:
+  db:
+    image: postgres:14
+    environment:
+      POSTGRES_DB: taskdb
+      POSTGRES_USER: developer
+      POSTGRES_PASSWORD: localdev
+    ports:
+      - "5432:5432"
