@@ -6,11 +6,11 @@ const options: swaggerJSDoc.Options = {
   definition: {
     openapi: "3.0.0",
     info: {
-      title: "RestoreMasters API",
+      title: "Backend Assessment API",
       version: "1.0.0",
       description: "API documentation for RestoreMasters Technical Assessment",
       contact: {
-        name: "RestoreMasters",
+        name: "Kurt Timajo",
       },
     },
     servers: [
@@ -34,7 +34,7 @@ const options: swaggerJSDoc.Options = {
       },
     ],
   },
-  apis: ["./src/docs/routes/*.ts", "./src/docs/system.ts"],
+  apis: ["./docs/routes/*.ts", "./docs/system.ts"],
 };
 
 const specs = swaggerJSDoc(options);

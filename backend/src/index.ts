@@ -5,7 +5,7 @@ import dotenv from "dotenv";
 import userRoutes from "./routes/user.routes";
 import taskRoutes from "./routes/task.routes";
 import { pool, testConnection } from "./utils/db";
-import { setupSwagger } from "./docs/swagger";
+import { setupSwagger } from "../docs/swagger";
 
 // Load environment variables
 dotenv.config();
